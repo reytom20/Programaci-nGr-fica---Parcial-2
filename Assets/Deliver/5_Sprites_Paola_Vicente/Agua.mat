@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Agua
+  m_Shader: {fileID: 4800000, guid: 5afcef7b1c4e9f3428e3d1bda3200f43, type: 3}
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _Agua:
+        m_Texture: {fileID: 2800000, guid: 82b77ae84bd708241b7a49816c40f93d, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _AlphaTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Texture1:
+        m_Texture: {fileID: 2800000, guid: 301efde3a1ab4734e858532b281b44fe, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - PixelSnap: 0
+    - _DistortionAmount: 0.05
+    - _NoiseAmplitude: 0.05
+    - _NoiseScale: 5
+    - _NoiseSpeed: 0.15
+    - _WaterLevel: 0.7
+    - _WaterTransparency: 0.3
+    - _WaveAmplitude: 0.03
+    - _WaveFrequency: 20
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _MoveDistortionSpeed: {r: 0.02, g: 0.02, b: 0, a: 0}
+    - _WaveSpeed: {r: 2, g: 2, b: 0, a: 0}
+  m_BuildTextureStacks: []
