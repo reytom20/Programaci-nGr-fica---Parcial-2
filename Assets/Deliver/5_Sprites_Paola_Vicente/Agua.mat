@@ -40,11 +40,14 @@ Material:
     m_Floats:
     - PixelSnap: 0
     - _DistortionAmount: 0.05
+    - _DistortionFrequency: 30
+    - _DistortionSpeed: 2
+    - _DistortionStrength: 0.02
     - _NoiseAmplitude: 0.05
     - _NoiseScale: 5
     - _NoiseSpeed: 0.15
     - _WaterLevel: 0.7
-    - _WaterTransparency: 0.3
+    - _WaterTransparency: 1
     - _WaveAmplitude: 0.03
     - _WaveFrequency: 20
     m_Colors:
