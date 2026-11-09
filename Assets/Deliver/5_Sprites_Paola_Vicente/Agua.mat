@@ -43,9 +43,19 @@ Material:
     - _DistortionFrequency: 30
     - _DistortionSpeed: 2
     - _DistortionStrength: 0.01
+    - _ImpactDecay: 2
+    - _ImpactFalloff: 10
+    - _ImpactFoamStrength: 0
+    - _ImpactFrequency: 40
+    - _ImpactPosition: 0.5
+    - _ImpactSpeed: 0.5
+    - _ImpactStrength: 0
+    - _ImpactTime: -100
+    - _InteractionRadius: 20
     - _NoiseAmplitude: 0.05
     - _NoiseScale: 5
     - _NoiseSpeed: 0.15
+    - _ObjectWaveStrength: 0
     - _RefractionBlend: 0.4
     - _WaterLevel: 0.7
     - _WaterTransparency: 1
@@ -53,6 +63,8 @@ Material:
     - _WaveFrequency: 20
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _ImpactFoamColor: {r: 0.7407885, g: 0.7835451, b: 0.8773585, a: 0}
+    - _ImpactObjectPosition: {r: 0, g: 0, b: 0, a: 0}
     - _MoveDistortionSpeed: {r: 0.02, g: 0.02, b: 0, a: 0}
     - _WaveSpeed: {r: 2, g: 2, b: 0, a: 0}
   m_BuildTextureStacks: []

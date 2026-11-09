@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: SH_StencilWriter
-  m_Shader: {fileID: 4800000, guid: ec35237280e9e374bba1ea4894f644cb, type: 3}
+  m_Name: ScannerWriter
+  m_Shader: {fileID: 4800000, guid: cff804ff49bbb094ab1f993565afd086, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
