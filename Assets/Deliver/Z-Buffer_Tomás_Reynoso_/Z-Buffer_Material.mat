@@ -21,8 +21,10 @@ Material:
     serializedVersion: 3
     m_TexEnvs: []
     m_Ints: []
-    m_Floats: []
+    m_Floats:
+    - _TimeScale: 4
     m_Colors:
-    - _ScanLineColor: {r: 0.8396226, g: 0.68516374, b: 0.68516374, a: 0}
-    - _SilhouetteColor: {r: 0.9056604, g: 0.35457456, b: 0.35457456, a: 0}
+    - _Color0: {r: 1, g: 0.6114723, b: 0.5896226, a: 0.003921569}
+    - _ScanLineColor: {r: 0.8679245, g: 0.16610628, b: 0.10234957, a: 0}
+    - _SilhouetteColor: {r: 0.6792453, g: 0.52224994, b: 0.5886797, a: 0}
   m_BuildTextureStacks: []
