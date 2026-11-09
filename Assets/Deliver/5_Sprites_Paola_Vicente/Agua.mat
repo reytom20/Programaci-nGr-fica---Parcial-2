@@ -47,16 +47,19 @@ Material:
     - _ImpactFalloff: 10
     - _ImpactFoamStrength: 0
     - _ImpactFrequency: 40
-    - _ImpactPosition: 0.5
+    - _ImpactPosition: 0.47197533
     - _ImpactSpeed: 0.5
     - _ImpactStrength: 0
     - _ImpactTime: -100
     - _InteractionRadius: 20
-    - _NoiseAmplitude: 0.05
+    - _NoiseAmplitude: 0.06
     - _NoiseScale: 5
     - _NoiseSpeed: 0.15
     - _ObjectWaveStrength: 0
     - _RefractionBlend: 0.4
+    - _SinkingProgress: 0
+    - _SinkingStrength: 0.08
+    - _SinkingWidth: 0.3
     - _WaterLevel: 0.7
     - _WaterTransparency: 1
     - _WaveAmplitude: 0.03

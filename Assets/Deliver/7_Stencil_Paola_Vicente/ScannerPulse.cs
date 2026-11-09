@@ -60,7 +60,6 @@ public class ScannerPulse : MonoBehaviour
             scannerSphere.transform.localScale = Vector3.one * radius * 2f;
 
             Shader.SetGlobalFloat(ScannerRadiusID, radius);
-            Debug.Log("Scanner Radius: " + radius);
 
             yield return null;
         }
