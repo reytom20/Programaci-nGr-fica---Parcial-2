@@ -1,4 +1,5 @@
 
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -6,6 +7,7 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Image))]
 public class WaterInteractionController : MonoBehaviour
 {
+
     [Header("Referencias")]
     [SerializeField] private Image waterImage;
 
@@ -17,8 +19,9 @@ public class WaterInteractionController : MonoBehaviour
     [SerializeField, Range(0f, 1f)]
     private float splashThreshold = 0.8f;
 
-    private readonly List<WaterInteractable> interactables = new();
-    private readonly Dictionary<WaterInteractable, float> previousImmersions = new();
+    private readonly List<WaterInteractable> interactables = new(); //Objetos registrados que pueden interactuar con el agua
+    private readonly Dictionary<WaterInteractable, float> previousImmersions = new(); //guarda la inmersión anterior de cada objeto para detectar entradas y salidas
+    private readonly HashSet<WaterInteractable> initializedInteractables = new(); //objetos ya inicializados para evitar efectos falsos al registrarlos
 
     private Material waterMaterial;
 
@@ -32,18 +35,29 @@ public class WaterInteractionController : MonoBehaviour
 
     private static readonly int SplashActiveID = Shader.PropertyToID("_SplashActive");
 
+    private static readonly int ExitPositionID = Shader.PropertyToID("_ExitPosition");
+
+    private static readonly int ExitProgressID = Shader.PropertyToID("_ExitProgress");
+
     [Header("Animación del agua")]
     [SerializeField] private float sinkingSpeed = 1.6f;
     [SerializeField] private float recoverySpeed = 0.6f;
 
     private float currentSinkingProgress;
     private bool isRecovering;
+    //objeto que actualmente controla la deformación de hundimiento
+    private WaterInteractable activeSinkingObject;
 
     [Header("Splash")]
     [SerializeField] private float splashDuration = 1.2f;
 
     private float splashTimer; //tiempo desde que empezó el splash
     private bool isSplashPlaying;
+
+    [Header("Exit Water")]
+    [SerializeField] private float exitRecoverySpeed = 0.8f; //velocidad con la que desaparece el estiramiento
+
+    private float currentExitProgress;
 
     private void Awake()
     {
@@ -57,6 +71,7 @@ public class WaterInteractionController : MonoBehaviour
 
         waterMaterial.SetFloat(SplashActiveID, 0f);
         waterMaterial.SetFloat(SplashProgressID, 0f);
+        waterMaterial.SetFloat(ExitProgressID, 0f);
     }
 
     public void RegisterInteractable(WaterInteractable interactable)
@@ -68,10 +83,21 @@ public class WaterInteractionController : MonoBehaviour
         previousImmersions[interactable] = 0f;
     }
 
+    // Elimina el objeto y limpia su historial de inmersión.
     public void UnregisterInteractable(WaterInteractable interactable)
     {
         interactables.Remove(interactable);
+        initializedInteractables.Remove(interactable);
         previousImmersions.Remove(interactable);
+
+        if (activeSinkingObject == interactable)
+        {
+            activeSinkingObject = null;
+            isRecovering = false;
+            currentSinkingProgress = 0f;
+
+            waterMaterial.SetFloat(SinkingProgressID, 0f);
+        }
     }
 
     private void Update()
@@ -82,6 +108,7 @@ public class WaterInteractionController : MonoBehaviour
         }
 
         UpdateSplash();
+        UpdateExit();
     }
 
     private void CheckImmersion(WaterInteractable interactable)
@@ -114,16 +141,23 @@ public class WaterInteractionController : MonoBehaviour
 
         float submergedHeight = surfaceY - bottomY;
 
+        //calcula qué porcentaje del objeto está sumergido
         float immersion = Mathf.Clamp01(
             submergedHeight / objectHeight
         );
 
-        Vector3 objectCenter = interactable.RectTransform.position;
+        //guarda el estado inicial para evitar efectos al comenzar
+        if (initializedInteractables.Add(interactable))
+        {
+            previousImmersions[interactable] = immersion;
+            return;
+        }
 
-        Vector3 localPosition = waterRect.InverseTransformPoint(
-            objectCenter
-        );
+        Vector3 objectCenter = (corners[0] + corners[2]) * 0.5f;
 
+        Vector3 localPosition = waterRect.InverseTransformPoint(objectCenter); //convertir la posición del centro del objeto desde coordenadas de mundo a coordenadas locales del agua
+
+        //convierte la posición horizontal del objeto a coordenadas UV
         float impactX = Mathf.InverseLerp(
             waterRect.rect.xMin,
             waterRect.rect.xMax,
@@ -131,22 +165,47 @@ public class WaterInteractionController : MonoBehaviour
         );
 
         float previousImmersion = previousImmersions[interactable];
+        bool completelyExitedWater = previousImmersion > 0f && immersion <= 0f;
+        bool isExitingWater = immersion < previousImmersion && immersion > 0f;  //detecta si el objeto está saliendo, pero sigue parcialmente sumergido
 
-        bool crossedSplashThreshold =
-            previousImmersion < splashThreshold &&
-            immersion >= splashThreshold;
+        bool crossedSplashThreshold = previousImmersion < splashThreshold && immersion >= splashThreshold; //Detecta cuándo el objeto alcanza el umbral para generar el splash
 
         if (crossedSplashThreshold)
         {
             StartSplash(impactX);
         }
 
+        if (completelyExitedWater)
+        {
+            StartSplash(impactX);
+        }
+
+        if (isExitingWater)
+        {
+            currentExitProgress = Mathf.Clamp01(1f - immersion);
+
+            //solamente actualizamos la posicion de salida del objeto que este saliendo
+            waterMaterial.SetFloat(ExitPositionID, impactX);
+        }
+
         previousImmersions[interactable] = immersion;
 
-        if (immersion >= splashThreshold)
+        if (crossedSplashThreshold)
         {
             isRecovering = true;
         }
+
+        //asigna el control del hundimiento al objeto que comienza a entrar
+        if (activeSinkingObject == null &&
+            immersion > previousImmersion &&
+            immersion > 0f)
+        {
+            activeSinkingObject = interactable;
+        }
+
+        //solo el objeto activo puede modificar el hundimiento
+        if (activeSinkingObject != interactable)
+            return;
 
         if (isRecovering)
         {
@@ -175,13 +234,23 @@ public class WaterInteractionController : MonoBehaviour
             );
         }
 
+        //libera el objeto cuando finaliza la recuperación del hundimiento
+        if (isRecovering && currentSinkingProgress <= 0f)
+        {
+            isRecovering = false;
+            activeSinkingObject = null;
+        }
+
+        //libera el objeto si sale del agua antes de activar el splash
         if (immersion <= 0f && currentSinkingProgress <= 0f)
         {
+            activeSinkingObject = null;
             isRecovering = false;
         }
 
         waterMaterial.SetFloat(ImpactPositionID, impactX);
         waterMaterial.SetFloat(SinkingProgressID, currentSinkingProgress);
+        Debug.Log("SinkingProgress: " + currentSinkingProgress);
     }
 
     //para que comience el splash desde el punto de contacto con el objeto
@@ -195,6 +264,7 @@ public class WaterInteractionController : MonoBehaviour
         waterMaterial.SetFloat(SplashActiveID, 1f);
     }
 
+    //anima la expansión de las ondas y las desactiva al finalizar
     private void UpdateSplash()
     {
         if (!isSplashPlaying)
@@ -215,7 +285,19 @@ public class WaterInteractionController : MonoBehaviour
         }
     }
 
-    //obtener la altura del agua
+    //devuelve gradualmente la elevación a su estado normal
+    private void UpdateExit()
+    {
+        currentExitProgress = Mathf.MoveTowards(
+            currentExitProgress,
+            0f,
+            exitRecoverySpeed * Time.deltaTime
+        );
+
+        waterMaterial.SetFloat(ExitProgressID, currentExitProgress);
+    }
+
+    //obtener la altura del agua a partir de WaterLevel
     private float GetWaterSurfaceY()
     {
         waterRect.GetWorldCorners(waterCorners);
@@ -229,4 +311,3 @@ public class WaterInteractionController : MonoBehaviour
     }
 
 }
-
