@@ -47,7 +47,7 @@ Material:
     - _ImpactFalloff: 10
     - _ImpactFoamStrength: 0
     - _ImpactFrequency: 40
-    - _ImpactPosition: 0.47197533
+    - _ImpactPosition: 0.80743474
     - _ImpactSpeed: 0.5
     - _ImpactStrength: 0
     - _ImpactTime: -100
@@ -58,8 +58,14 @@ Material:
     - _ObjectWaveStrength: 0
     - _RefractionBlend: 0.4
     - _SinkingProgress: 0
-    - _SinkingStrength: 0.08
+    - _SinkingStrength: 0.1
     - _SinkingWidth: 0.3
+    - _SplashActive: 0
+    - _SplashPosition: 0.80743474
+    - _SplashProgress: 1
+    - _SplashStrength: 0.09
+    - _SplashThickness: 0.045
+    - _SplashWidth: 0.1
     - _WaterLevel: 0.7
     - _WaterTransparency: 1
     - _WaveAmplitude: 0.03
