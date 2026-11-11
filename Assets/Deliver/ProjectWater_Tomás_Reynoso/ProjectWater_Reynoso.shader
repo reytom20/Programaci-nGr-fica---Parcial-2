@@ -121,7 +121,7 @@ Shader "Water_Shader"
 }
 /*ASEBEGIN
 Version=18900
-221;73;1352;690;5912.263;6773.223;1.442653;True;False
+228;73;1323;743;5574.199;6734.17;1.142653;True;False
 Node;AmplifyShaderEditor.UnityProjectorMatrixNode;2;-5469.718,-6520.247;Inherit;False;0;1;FLOAT4x4;0
 Node;AmplifyShaderEditor.PosVertexDataNode;6;-5508.394,-6436.41;Inherit;False;1;0;5;FLOAT4;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
 Node;AmplifyShaderEditor.SimpleMultiplyOpNode;8;-5314.394,-6489.41;Inherit;False;2;2;0;FLOAT4x4;0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1;False;1;FLOAT4;0,0,0,0;False;1;FLOAT4;0
@@ -142,4 +142,4 @@ WireConnection;13;0;11;0
 WireConnection;12;1;13;0
 WireConnection;1;0;12;0
 ASEEND*/
-//CHKSM=9AA53D05536EE0D9AB5CD2B63CEBF2BB6014A508
+//CHKSM=B65F7EE18A6609BF2067DD3A357DEF1577209DF3
