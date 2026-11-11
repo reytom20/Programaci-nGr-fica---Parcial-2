@@ -159,16 +159,16 @@ Shader "Parcial2/P6/UI_Distortion"
 }
 /*ASEBEGIN
 Version=18900
-235;72;822;514;1087.122;300.6246;1.458934;False;False
+255;72;784;457.5;1799.244;455.4564;1.68986;False;False
 Node;AmplifyShaderEditor.CommentaryNode;10;-1550,-300;Inherit;False;350;807;Propiedades;4;1;2;3;4;;1,1,1,1;0;0
 Node;AmplifyShaderEditor.TemplateShaderPropertyNode;1;-1500,-250;Inherit;False;0;0;_MainTex;Shader;False;0;5;SAMPLER2D;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
 Node;AmplifyShaderEditor.TexturePropertyNode;2;-1500,-60;Inherit;True;Property;_DistortNormal;Distort Normal;0;0;Create;True;0;0;0;False;0;False;3d84ad001cdbb5545a3b373ac0453619;3d84ad001cdbb5545a3b373ac0453619;True;bump;Auto;Texture2D;-1;0;2;SAMPLER2D;0;SAMPLERSTATE;1
 Node;AmplifyShaderEditor.RangedFloatNode;3;-1500,190;Inherit;False;Property;_DistortAmount;Distort Amount;8;0;Create;True;0;0;0;False;0;False;0.15;0.15;0;1;0;1;FLOAT;0
 Node;AmplifyShaderEditor.Vector4Node;4;-1500,300;Inherit;False;Property;_DistortSpeed;Distort Speed;9;0;Create;True;0;0;0;False;0;False;0.02,0.05,0,0;0.02,0.05,0,0;0;5;FLOAT4;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
-Node;AmplifyShaderEditor.CommentaryNode;11;-1000,-110;Inherit;False;674;252;Efecto: Distortion (UI-Sprite Effect Layer);2;5;6;;1,1,1,1;0;0
+Node;AmplifyShaderEditor.CommentaryNode;11;-1000,-110;Inherit;False;674;252;Distorsion;2;5;6;;1,1,1,1;0;0
 Node;AmplifyShaderEditor.FunctionNode;5;-950,-60;Inherit;False;UI-Sprite Effect Layer;1;;1;789bf62641c5cfe4ab7126850acc22b8;18,74,0,204,0,191,0,225,0,242,0,237,0,249,0,186,0,177,0,182,1,229,0,92,0,98,0,234,0,126,0,129,1,130,0,31,0;18;192;COLOR;1,1,1,1;False;39;COLOR;1,1,1,1;False;37;SAMPLER2D;;False;218;FLOAT2;0,0;False;239;FLOAT2;0,0;False;181;FLOAT2;0,0;False;75;SAMPLER2D;;False;80;FLOAT;10;False;183;FLOAT2;0,0;False;188;SAMPLER2D;;False;33;SAMPLER2D;;False;248;FLOAT2;0,0;False;233;SAMPLER2D;;False;101;SAMPLER2D;;False;57;FLOAT4;0,0,0,0;False;40;FLOAT;0;False;231;FLOAT;10;False;30;FLOAT;10;False;2;COLOR;0;FLOAT2;172
 Node;AmplifyShaderEditor.RegisterLocalVarNode;6;-550,-60;Inherit;False;Distorsion;-1;True;1;0;COLOR;0,0,0,0;False;1;COLOR;0
-Node;AmplifyShaderEditor.CommentaryNode;12;-200,-110;Inherit;False;512;392;Output: color del Image (Vertex Color);3;7;8;9;;1,1,1,1;0;0
+Node;AmplifyShaderEditor.CommentaryNode;12;-200,-110;Inherit;False;512;392;Color;3;7;8;9;;1,1,1,1;0;0
 Node;AmplifyShaderEditor.GetLocalVarNode;7;-150,-60;Inherit;False;6;Distorsion;1;0;OBJECT;;False;1;COLOR;0
 Node;AmplifyShaderEditor.VertexColorNode;8;-150,80;Inherit;False;0;5;COLOR;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
 Node;AmplifyShaderEditor.SimpleMultiplyOpNode;9;150,0;Inherit;False;2;2;0;COLOR;0,0,0,0;False;1;COLOR;0,0,0,0;False;1;COLOR;0
@@ -182,4 +182,4 @@ WireConnection;9;0;7;0
 WireConnection;9;1;8;0
 WireConnection;0;0;9;0
 ASEEND*/
-//CHKSM=F45EA31640602746E5A84CD1FA815B684572D2A4
+//CHKSM=3BAAA47514422EE6916D9F792AA04324D1873A0C

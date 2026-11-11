@@ -39,11 +39,11 @@ Material:
     m_Ints: []
     m_Floats:
     - PixelSnap: 0
-    - _DistortionAmount: 0.05
-    - _DistortionFrequency: 30
+    - _DistortionAmount: 0
+    - _DistortionFrequency: 33
     - _DistortionSpeed: 2
     - _DistortionStrength: 0.01
-    - _ExitPosition: 0.5
+    - _ExitPosition: 0.7350985
     - _ExitProgress: 0
     - _ExitStrength: 0.08
     - _ExitWidth: 0.15
@@ -51,7 +51,7 @@ Material:
     - _ImpactFalloff: 10
     - _ImpactFoamStrength: 0
     - _ImpactFrequency: 40
-    - _ImpactPosition: 0.5
+    - _ImpactPosition: 0.72461385
     - _ImpactSpeed: 0.5
     - _ImpactStrength: 0
     - _ImpactTime: -100
@@ -65,8 +65,8 @@ Material:
     - _SinkingStrength: 0.1
     - _SinkingWidth: 0.3
     - _SplashActive: 0
-    - _SplashPosition: 0.5
-    - _SplashProgress: 0
+    - _SplashPosition: 0.73227566
+    - _SplashProgress: 1
     - _SplashStrength: 0.09
     - _SplashThickness: 0.045
     - _SplashWidth: 0.1

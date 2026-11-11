@@ -164,27 +164,27 @@ Shader "Parcial2/P6/UI_Flow"
 }
 /*ASEBEGIN
 Version=18900
-235;72;822;514;411;254.25;1;False;False
+255;72;784;457.5;687.5073;314.7715;1.62326;False;False
 Node;AmplifyShaderEditor.CommentaryNode;13;-1750,-350;Inherit;False;350;1145;Propiedades;5;1;5;6;7;8;;1,1,1,1;0;0
 Node;AmplifyShaderEditor.TemplateShaderPropertyNode;1;-1700,-300;Inherit;False;0;0;_MainTex;Shader;False;0;5;SAMPLER2D;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
 Node;AmplifyShaderEditor.CommentaryNode;14;-1200,-350;Inherit;False;370;280;Sprite base;1;2;;1,1,1,1;0;0
 Node;AmplifyShaderEditor.CommentaryNode;15;-1200,610;Inherit;False;248;160;Tiempo x velocidad;1;3;;1,1,1,1;0;0
 Node;AmplifyShaderEditor.RangedFloatNode;8;-1700,680;Inherit;False;Property;_FlowSpeed;Flow Speed;10;0;Create;True;0;0;0;False;0;False;0.6;0.6;0;3;0;1;FLOAT;0
-Node;AmplifyShaderEditor.CommentaryNode;16;-700,-50;Inherit;False;674;252;Efecto: Flow (UI-Sprite Effect Layer);2;4;9;;1,1,1,1;0;0
-Node;AmplifyShaderEditor.ColorNode;7;-1700,430;Inherit;False;Property;_FlowTint;Flow Tint;9;0;Create;True;0;0;0;False;0;False;1,0.75,0.35,1;1,0.75,0.35,1;True;0;5;COLOR;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
-Node;AmplifyShaderEditor.TexturePropertyNode;5;-1700,-80;Inherit;True;Property;_FlowRamp;Flow Ramp;7;0;Create;True;0;0;0;False;0;False;50e92d7619e6abd4a8812737aff2eac5;50e92d7619e6abd4a8812737aff2eac5;False;white;Auto;Texture2D;-1;0;2;SAMPLER2D;0;SAMPLERSTATE;1
-Node;AmplifyShaderEditor.SamplerNode;2;-1150,-300;Inherit;True;Property;_TextureSample0;Texture Sample 0;0;0;Create;True;0;0;0;False;0;False;-1;None;None;True;0;False;white;Auto;False;Object;-1;Auto;Texture2D;8;0;SAMPLER2D;;False;1;FLOAT2;0,0;False;2;FLOAT;0;False;3;FLOAT2;0,0;False;4;FLOAT2;0,0;False;5;FLOAT;1;False;6;FLOAT;0;False;7;SAMPLERSTATE;;False;5;COLOR;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
-Node;AmplifyShaderEditor.TexturePropertyNode;6;-1700,180;Inherit;True;Property;_FlowMap;Flow Map;8;0;Create;True;0;0;0;False;0;False;f270691a5045edf478a065bf5c36022b;f270691a5045edf478a065bf5c36022b;False;white;Auto;Texture2D;-1;0;2;SAMPLER2D;0;SAMPLERSTATE;1
 Node;AmplifyShaderEditor.SimpleTimeNode;3;-1150,660;Inherit;False;1;0;FLOAT;1;False;1;FLOAT;0
+Node;AmplifyShaderEditor.TexturePropertyNode;6;-1700,180;Inherit;True;Property;_FlowMap;Flow Map;8;0;Create;True;0;0;0;False;0;False;f270691a5045edf478a065bf5c36022b;f270691a5045edf478a065bf5c36022b;False;white;Auto;Texture2D;-1;0;2;SAMPLER2D;0;SAMPLERSTATE;1
+Node;AmplifyShaderEditor.SamplerNode;2;-1150,-300;Inherit;True;Property;_TextureSample0;Texture Sample 0;0;0;Create;True;0;0;0;False;0;False;-1;None;None;True;0;False;white;Auto;False;Object;-1;Auto;Texture2D;8;0;SAMPLER2D;;False;1;FLOAT2;0,0;False;2;FLOAT;0;False;3;FLOAT2;0,0;False;4;FLOAT2;0,0;False;5;FLOAT;1;False;6;FLOAT;0;False;7;SAMPLERSTATE;;False;5;COLOR;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
+Node;AmplifyShaderEditor.ColorNode;7;-1700,430;Inherit;False;Property;_FlowTint;Flow Tint;9;0;Create;True;0;0;0;False;0;False;1,0.75,0.35,1;1,0.75,0.35,1;True;0;5;COLOR;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
+Node;AmplifyShaderEditor.CommentaryNode;16;-700,-50;Inherit;False;674;252;Flow;2;4;9;;1,1,1,1;0;0
+Node;AmplifyShaderEditor.TexturePropertyNode;5;-1700,-80;Inherit;True;Property;_FlowRamp;Flow Ramp;7;0;Create;True;0;0;0;False;0;False;50e92d7619e6abd4a8812737aff2eac5;50e92d7619e6abd4a8812737aff2eac5;False;white;Auto;Texture2D;-1;0;2;SAMPLER2D;0;SAMPLERSTATE;1
 Node;AmplifyShaderEditor.FunctionNode;4;-650,0;Inherit;False;UI-Sprite Effect Layer;0;;1;789bf62641c5cfe4ab7126850acc22b8;18,74,1,204,1,191,1,225,0,242,0,237,0,249,0,186,0,177,0,182,0,229,0,92,0,98,0,234,0,126,0,129,1,130,0,31,2;18;192;COLOR;1,1,1,1;False;39;COLOR;1,1,1,1;False;37;SAMPLER2D;;False;218;FLOAT2;0,0;False;239;FLOAT2;0,0;False;181;FLOAT2;0,0;False;75;SAMPLER2D;;False;80;FLOAT;10;False;183;FLOAT2;0,0;False;188;SAMPLER2D;;False;33;SAMPLER2D;;False;248;FLOAT2;0,0;False;233;SAMPLER2D;;False;101;SAMPLER2D;;False;57;FLOAT4;0,0,0,0;False;40;FLOAT;0;False;231;FLOAT;10;False;30;FLOAT;10;False;2;COLOR;0;FLOAT2;172
-Node;AmplifyShaderEditor.CommentaryNode;17;100,-50;Inherit;False;562;392;Output: color del Image (Vertex Color);3;10;11;12;;1,1,1,1;0;0
+Node;AmplifyShaderEditor.CommentaryNode;17;100,-50;Inherit;False;562;392;COLOR;3;10;11;12;;1,1,1,1;0;0
 Node;AmplifyShaderEditor.RegisterLocalVarNode;9;-250,0;Inherit;False;Flow;-1;True;1;0;COLOR;0,0,0,0;False;1;COLOR;0
 Node;AmplifyShaderEditor.VertexColorNode;11;150,140;Inherit;False;0;5;COLOR;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
 Node;AmplifyShaderEditor.GetLocalVarNode;10;150,0;Inherit;False;9;Flow;1;0;OBJECT;;False;1;COLOR;0
 Node;AmplifyShaderEditor.SimpleMultiplyOpNode;12;500,50;Inherit;False;2;2;0;COLOR;0,0,0,0;False;1;COLOR;0,0,0,0;False;1;COLOR;0
 Node;AmplifyShaderEditor.TemplateMultiPassMasterNode;0;800,0;Float;False;True;-1;2;ASEMaterialInspector;0;4;Parcial2/P6/UI_Flow;5056123faa0c79b47ab6ad7e8bf059a4;True;Default;0;0;Default;2;False;True;2;5;False;-1;10;False;-1;0;1;False;-1;0;False;-1;False;False;False;False;False;False;False;False;False;False;False;False;True;2;False;-1;False;True;True;True;True;True;0;True;-9;False;False;False;False;False;False;False;True;True;0;True;-5;255;True;-8;255;True;-7;0;True;-4;0;True;-6;1;False;-1;1;False;-1;7;False;-1;1;False;-1;1;False;-1;1;False;-1;False;True;2;False;-1;True;0;True;-11;False;True;5;Queue=Transparent=Queue=0;IgnoreProjector=True;RenderType=Transparent=RenderType;PreviewType=Plane;CanUseSpriteAtlas=True;False;0;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;True;2;0;;0;0;Standard;0;0;1;True;False;;False;0
-WireConnection;2;0;1;0
 WireConnection;3;0;8;0
+WireConnection;2;0;1;0
 WireConnection;4;192;2;0
 WireConnection;4;39;7;0
 WireConnection;4;37;5;0
@@ -195,4 +195,4 @@ WireConnection;12;0;10;0
 WireConnection;12;1;11;0
 WireConnection;0;0;12;0
 ASEEND*/
-//CHKSM=626D0176B50E00384F6974D678829B8CC3C798B6
+//CHKSM=A264D491458384BA613C5D869D3AAE0B265B1570

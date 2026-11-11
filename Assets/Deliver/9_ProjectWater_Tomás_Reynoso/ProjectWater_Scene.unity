@@ -720,6 +720,8 @@ GameObject:
   - component: {fileID: 1207914284}
   - component: {fileID: 1207914283}
   - component: {fileID: 1207914282}
+  - component: {fileID: 1207914286}
+  - component: {fileID: 1207914285}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -793,6 +795,43 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 25.909, y: -157.557, z: 0.663}
+--- !u!114 &1207914285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1207914281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbd120615c12b5e41b9917faf8539880, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velocidad: 6
+  multiplicadorRapido: 3
+  sensibilidad: 2.5
+--- !u!114 &1207914286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1207914281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce2b56e58c011344d95f55ce0ef677f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shaderAgua: {fileID: 4800000, guid: d42ae440b3dd1274180119a1f5854c41, type: 3}
+  agua: {fileID: 751887099}
+  velocidadTransicion: 4
+  colorTinte: {r: 0.15, g: 0.55, b: 0.8, a: 1}
+  cantidadTinte: 0.6
+  colorNiebla: {r: 0.02, g: 0.18, b: 0.3, a: 1}
+  inicioNiebla: 1
+  distanciaNiebla: 25
+  densidadNiebla: 0.95
+  matAgua: {fileID: 0}
 --- !u!1001 &1274377713
 PrefabInstance:
   m_ObjectHideFlags: 0
