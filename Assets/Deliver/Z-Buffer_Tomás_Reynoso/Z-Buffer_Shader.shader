@@ -116,7 +116,7 @@ Shader "Z-Buffer_Shader"
 				float3 WorldPosition = i.worldPos;
 				#endif
 				float mulTime10 = _Time.y * _TimeScale;
-				float4 lerpResult18 = lerp( _SilhouetteColor , _ScanLineColor , step( sin( ( ( (WorldPosition).y * 25.0 ) + ( mulTime10 * 3.0 ) ) ) , 0.4 ));
+				float4 lerpResult18 = lerp( _SilhouetteColor , _ScanLineColor , step( sin( ( ( (WorldPosition).y * 25.0 ) + mulTime10 ) ) , 0.4 ));
 				
 				
 				finalColor = lerpResult18;
@@ -131,26 +131,24 @@ Shader "Z-Buffer_Shader"
 }
 /*ASEBEGIN
 Version=18900
-213;73;1332;675;1307.833;405.1167;1;False;False
-Node;AmplifyShaderEditor.RangedFloatNode;19;-1215.137,95.7433;Inherit;False;Property;_TimeScale;Time Scale;2;0;Create;True;0;0;0;False;0;False;1;6;0;10;0;1;FLOAT;0
-Node;AmplifyShaderEditor.WorldPosInputsNode;8;-1118.093,-47.69217;Inherit;False;0;4;FLOAT3;0;FLOAT;1;FLOAT;2;FLOAT;3
-Node;AmplifyShaderEditor.ComponentMaskNode;9;-915.0817,-50.93616;Inherit;False;False;True;False;True;1;0;FLOAT3;0,0,0;False;1;FLOAT;0
-Node;AmplifyShaderEditor.SimpleTimeNode;10;-892.082,60.0638;Inherit;False;1;0;FLOAT;1;False;1;FLOAT;0
-Node;AmplifyShaderEditor.SimpleMultiplyOpNode;11;-706.0817,61.0638;Inherit;False;2;2;0;FLOAT;0;False;1;FLOAT;3;False;1;FLOAT;0
+216;73;1198;656;1211.27;511.1513;1.3;False;False
+Node;AmplifyShaderEditor.WorldPosInputsNode;8;-1080.093,-45.69217;Inherit;False;0;4;FLOAT3;0;FLOAT;1;FLOAT;2;FLOAT;3
+Node;AmplifyShaderEditor.RangedFloatNode;19;-1032.137,97.7433;Inherit;False;Property;_TimeScale;Time Scale;2;0;Create;True;0;0;0;False;0;False;1;6;0;10;0;1;FLOAT;0
+Node;AmplifyShaderEditor.ComponentMaskNode;9;-911.0817,-50.93616;Inherit;False;False;True;False;True;1;0;FLOAT3;0,0,0;False;1;FLOAT;0
 Node;AmplifyShaderEditor.SimpleMultiplyOpNode;12;-707.0817,-44.93616;Inherit;False;2;2;0;FLOAT;0;False;1;FLOAT;25;False;1;FLOAT;0
-Node;AmplifyShaderEditor.SimpleAddOpNode;13;-494.0817,30.06384;Inherit;False;2;2;0;FLOAT;0;False;1;FLOAT;0;False;1;FLOAT;0
-Node;AmplifyShaderEditor.SinOpNode;20;-331.34,31.61829;Inherit;False;1;0;FLOAT;0;False;1;FLOAT;0
-Node;AmplifyShaderEditor.StepOpNode;16;-177.8135,29.68936;Inherit;False;2;0;FLOAT;0;False;1;FLOAT;0.4;False;1;FLOAT;0
-Node;AmplifyShaderEditor.ColorNode;7;-312.5352,-346.8735;Inherit;False;Property;_SilhouetteColor;SilhouetteColor;0;0;Create;True;0;0;0;False;0;False;1,0,0.071,1;0,1,0.9297175,0;True;0;5;COLOR;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
-Node;AmplifyShaderEditor.ColorNode;17;-313.8135,-154.3107;Inherit;False;Property;_ScanLineColor;ScanLineColor;1;0;Create;True;0;0;0;False;0;False;1,1,1,0.003921569;0,0,0,0;True;0;5;COLOR;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
-Node;AmplifyShaderEditor.LerpOp;18;-5.813477,-20.31064;Inherit;False;3;0;COLOR;0,0,0,0;False;1;COLOR;0,0,0,0;False;2;FLOAT;0;False;1;COLOR;0
-Node;AmplifyShaderEditor.TemplateMultiPassMasterNode;6;180,-21;Float;False;True;-1;2;ASEMaterialInspector;100;1;Z-Buffer_Shader;0770190933193b94aaa3065e307002fa;True;Unlit;0;0;Unlit;2;True;True;1;1;False;-1;0;False;-1;0;1;False;-1;0;False;-1;True;0;False;-1;0;False;-1;False;False;False;False;False;False;False;False;False;True;0;False;-1;False;True;0;False;-1;False;True;True;True;True;True;0;False;-1;False;False;False;False;False;False;True;True;True;1;False;-1;255;False;-1;255;False;-1;6;False;-1;1;False;-1;1;False;-1;1;False;-1;7;False;-1;1;False;-1;1;False;-1;1;False;-1;True;True;2;False;-1;True;2;False;-1;True;True;0;False;-1;0;False;-1;True;1;RenderType=Transparent=RenderType;True;2;0;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;True;1;LightMode=ForwardBase;False;0;;0;0;Standard;1;Vertex Position,InvertActionOnDeselection;1;0;1;True;False;;False;0
+Node;AmplifyShaderEditor.SimpleTimeNode;10;-741.082,57.0638;Inherit;False;1;0;FLOAT;1;False;1;FLOAT;0
+Node;AmplifyShaderEditor.SimpleAddOpNode;13;-534.0817,32.06384;Inherit;False;2;2;0;FLOAT;0;False;1;FLOAT;0;False;1;FLOAT;0
+Node;AmplifyShaderEditor.SinOpNode;20;-403.34,33.61829;Inherit;False;1;0;FLOAT;0;False;1;FLOAT;0
+Node;AmplifyShaderEditor.ColorNode;17;-352.8135,-152.3107;Inherit;False;Property;_ScanLineColor;ScanLineColor;1;0;Create;True;0;0;0;False;0;False;1,1,1,0.003921569;0,0,0,0;True;0;5;COLOR;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
+Node;AmplifyShaderEditor.ColorNode;7;-356.5352,-331.8735;Inherit;False;Property;_SilhouetteColor;SilhouetteColor;0;0;Create;True;0;0;0;False;0;False;1,0,0.071,1;0,1,0.9297175,0;True;0;5;COLOR;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
+Node;AmplifyShaderEditor.StepOpNode;16;-270.8135,32.68936;Inherit;False;2;0;FLOAT;0;False;1;FLOAT;0.4;False;1;FLOAT;0
+Node;AmplifyShaderEditor.LerpOp;18;-50.81348,-15.31064;Inherit;False;3;0;COLOR;0,0,0,0;False;1;COLOR;0,0,0,0;False;2;FLOAT;0;False;1;COLOR;0
+Node;AmplifyShaderEditor.TemplateMultiPassMasterNode;6;103,-16;Float;False;True;-1;2;ASEMaterialInspector;100;1;Z-Buffer_Shader;0770190933193b94aaa3065e307002fa;True;Unlit;0;0;Unlit;2;True;True;1;1;False;-1;0;False;-1;0;1;False;-1;0;False;-1;True;0;False;-1;0;False;-1;False;False;False;False;False;False;False;False;False;True;0;False;-1;True;True;0;False;-1;False;True;True;True;True;True;0;False;-1;False;False;False;False;False;False;True;True;True;1;False;-1;255;False;-1;255;False;-1;6;False;-1;1;False;-1;1;False;-1;1;False;-1;7;False;-1;1;False;-1;1;False;-1;1;False;-1;True;True;2;False;-1;True;2;False;-1;True;True;0;False;-1;0;False;-1;True;1;RenderType=Transparent=RenderType;True;2;0;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;True;1;LightMode=ForwardBase;False;0;;0;0;Standard;1;Vertex Position,InvertActionOnDeselection;1;0;1;True;False;;False;0
 WireConnection;9;0;8;0
-WireConnection;10;0;19;0
-WireConnection;11;0;10;0
 WireConnection;12;0;9;0
+WireConnection;10;0;19;0
 WireConnection;13;0;12;0
-WireConnection;13;1;11;0
+WireConnection;13;1;10;0
 WireConnection;20;0;13;0
 WireConnection;16;0;20;0
 WireConnection;18;0;7;0
@@ -158,4 +156,4 @@ WireConnection;18;1;17;0
 WireConnection;18;2;16;0
 WireConnection;6;0;18;0
 ASEEND*/
-//CHKSM=BE4FB5978AF4880108C468F32C2F75F250F16673
+//CHKSM=FD4232BCDA9E72AB085EF56F5E8DCBA1DCEFD4D6
