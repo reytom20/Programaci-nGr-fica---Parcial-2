@@ -66,7 +66,7 @@ Material:
     - _SinkingWidth: 0.3
     - _SplashActive: 0
     - _SplashPosition: 0.5
-    - _SplashProgress: 1
+    - _SplashProgress: 0
     - _SplashStrength: 0.09
     - _SplashThickness: 0.045
     - _SplashWidth: 0.1
